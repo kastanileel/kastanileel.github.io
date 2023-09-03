@@ -5,7 +5,7 @@
 
     <div class="content-overlay">
       <div class="blurredField">
-        <h1>KASTANILEEL</h1>
+        <h1 class="typewriter">KASTANILEEL</h1>
         <p class="profession">SOFTWARE DEVELOPER</p>
       </div>
 
@@ -39,10 +39,8 @@ header {
 }
 
 .landing-page {
-  position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 .fullscreen-bg {
@@ -72,6 +70,10 @@ h1 {
   margin-bottom: -20px;
 }
 
+button {
+  width: 150px;
+}
+
 .profession {
   font-size: 2.2rem;
   color: white;
@@ -79,7 +81,7 @@ h1 {
 }
 
 .blurredField {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(34px);
   height: 110%;
   width: 110%;
 }
@@ -88,6 +90,30 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+      typing 2s steps(40, end),
+      blink-caret .75s step-end infinite;
+
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
 
 .btn-a, .btn-b {
