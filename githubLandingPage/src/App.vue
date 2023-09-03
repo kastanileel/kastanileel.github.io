@@ -39,8 +39,9 @@ header {
 }
 
 .landing-page {
-  width: 100vw;
-  height: 100vh;
+  width: auto;
+  height: auto;
+  overflow-x: hidden;
 }
 
 .fullscreen-bg {
