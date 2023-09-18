@@ -1,11 +1,15 @@
-<template>
+<template class="background">
 <h1>Blog Page</h1>
-  <router-view></router-view>
 </template>
 
 <script setup>
+import Card from "primevue/card";
 </script>
 
 <style scoped>
+
+.background {
+  background-color: #282828;
+}
 
 </style>

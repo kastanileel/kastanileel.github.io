@@ -1,7 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import glsl from 'vue-glsl'
+
+//import primevue with css
 import PrimeVue from "primevue/config";
+import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
+
+
+
 import ProjectsPage from "@/pages/ProjectsPage.vue";
 import BlogPage from "@/pages/BlogPage.vue";
 //import vue router
