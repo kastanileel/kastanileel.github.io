@@ -10,8 +10,8 @@ import {onMounted, ref} from "vue";
 
 const props = defineProps( {
   shaderFile: String,
-  resolutionWidth: {type: Number, default: 800},
-  resolutionHeight: {type: Number, default: 600},
+  resolutionWidth: {type: String, default: 800},
+  resolutionHeight: {type: String, default: 600},
 })
 
 const shader = ref('')

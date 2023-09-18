@@ -10,8 +10,8 @@
       </div>
 
       <div class="buttons">
-        <button class="btn-a">PROJECTS</button>
-        <button class="btn-b">BLOG</button>
+        <button class="btn-a" @click="onProjBtn">PROJECTS</button>
+        <button class="btn-b" @click="onBlogBtn">BLOG</button>
       </div>
     </div>
   </div>
@@ -22,12 +22,13 @@ import {onMounted} from "vue";
 import FragmentShaderBox from "./components/FragmentShaderBox.vue";
 
 
+function onBlogBtn(){
+ console.log("blog")
+}
 
-onMounted(() => {
-
-  console.log("leel")
-
-})
+function onProjBtn(){
+  console.log("projects")
+}
 
 
 
