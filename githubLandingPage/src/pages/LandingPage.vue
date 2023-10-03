@@ -1,7 +1,7 @@
 <template>
   <div class="landing-page">
 
-    <FragmentShaderBox class="fullscreen-bg" shaderFile="/shaders/Sunset.txt" resolution-width="960"
+    <FragmentShaderBox class="fullscreen-bg" shaderFile="/shaders/RayMarcher.txt" resolution-width="960"
                        resolution-height="540"></FragmentShaderBox>
 
     <div class="content-overlay">
