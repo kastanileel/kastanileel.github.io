@@ -1,5 +1,10 @@
 <template>
+
   <div class="landing-page">
+    <div class="header">
+      <img src="/pb.png" alt="kastanileel" class="profile-image">
+    </div>
+
 
     <FragmentShaderBox class="fullscreen-bg" shaderFile="/shaders/LandingPageShader.txt" resolution-width="960"
                        resolution-height="540"></FragmentShaderBox>
@@ -9,12 +14,14 @@
         <h1 class="typewriter">KASTANILEEL</h1>
         <p class="profession">SOFTWARE DEVELOPER</p>
       </div>
-
-      <div class="buttons">
-        <button class="btn-a" @click="onProjBtn">PROJECTS</button>
-        <button class="btn-b" @click="onBlogBtn">BLOG</button>
-      </div>
     </div>
+    <div class="middle-buttons">
+      <button class="btn-nav" @click="onProjectsBtn">PROJECTS</button>
+      <button class="btn-nav" @click="onShaderBtn">SHADER LIBRARY</button>
+    </div>
+
+
+
   </div>
 </template>
 <script setup lang="ts">
@@ -23,17 +30,82 @@ import {router} from "../main.js"
 import FragmentShaderBox from "../components/FragmentShaderBox.vue";
 
 
-function onBlogBtn() {
-  // push to /blog
-  router.push('/blog')
-}
-
-function onProjBtn() {
+function onProjectsBtn() {
   router.push('/projects')
 }
 
+function onShaderBtn() {
+  router.push('/shader-library')
+}
+
+
+
+
+
 </script>
 <style scoped>
+/* Mobile styles */
+
+/* Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Base font size for responsive rem unit */
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .landing-page .header {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 2.5rem;  /* Slightly smaller font size */
+  }
+
+  .profession {
+    font-size: 1.8rem;  /* Slightly smaller font size */
+  }
+
+  button {
+    width: 130px;   /* Slightly smaller width */
+    font-size: 0.9rem; /* Smaller font size for buttons */
+  }
+
+  .content-overlay {
+    transform: translate(-50%, -50%);
+    padding: 0 10px; /* Padding to ensure text doesn't touch screen edge */
+  }
+
+  .middle-buttons {
+    gap: 5px;  /* Reduced gap for mobile */
+
+  }
+
+  .btn-nav {
+    font-size: 0.8rem;  /* Even smaller font size for mobile */
+    padding: 8px 10px;  /* Reduced padding for mobile */
+  }
+}
+
+/* Additional styles for better touch feedback on mobile */
+.btn-nav:active {
+  background-color: #777;
+  transform: scale(0.95);
+}
+
+/* Optional: Consider adding a touch-friendly padding for buttons */
+.btn-nav {
+  padding: 12px 32px;
+}
+
+
 header {
   line-height: 1.5;
 }
@@ -52,16 +124,33 @@ header {
   top: 0;
   left: 0;
 }
+button {
+  font-size: 0.9rem; /* Smaller font size for buttons */
+}
+
+.middle-buttons {
+  /* center buttons */
+  display: flex;
+  flex-direction: row;  /* Layout buttons in a row */
+  align-items: center;  /* Vertically align the buttons */
+  justify-content: center;  /* Horizontally center the buttons */
+  gap: 10px;
+  z-index: 1;
+  position: absolute;
+  top: 60%;  /* Adjust as necessary to position vertically */
+  left: 50%;  /* Horizontal centering start point */
+  transform: translate(-50%, -50%);  /* Center the element from its middle, not its top-left corner */
+}
+
 
 .content-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-55%, -50%);
   text-align: center;
   z-index: 1; /* Ensure this content is displayed above the background image */
   font-family: "Fira Code Medium", monospace;
-
 }
 
 h1 {
@@ -82,15 +171,9 @@ button {
 }
 
 .blurredField {
-  backdrop-filter: blur(34px);
+  backdrop-filter: blur(50px);
   height: 110%;
   width: 110%;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 }
 
 .typewriter {
@@ -124,18 +207,41 @@ button {
   }
 }
 
-.btn-a, .btn-b {
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2; /* To be above the background and overlay content */
+  width: 93px;
+}
+
+.profile-image {
+  width: 50px; /* Adjust based on your image's dimensions */
+  height: 50px;
+  border-radius: 50%; /* Make it circular */
+}
+
+.btn-nav {
+  padding: 8px 20px;
+  flex: 1;  /* This will make each button take equal space */
+  text-align: center;  /* To center the text inside the buttons */
   border: none;
   background-color: #333;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
-
-  /* For better appearance, optionally add some hover effect */
+  min-height: 50px;
 }
 
-.btn-a:hover, .btn-b:hover {
+
+.btn-nav:hover {
   background-color: #555;
 }
+
 </style>
