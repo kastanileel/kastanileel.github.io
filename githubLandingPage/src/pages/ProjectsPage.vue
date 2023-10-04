@@ -18,18 +18,18 @@ import ProjectCard from '../components/ProjectCard.vue';
 
 const projects = ref([
   {
-    id: 1,
-    title: "Project 1",
-    description: "Brief description of project 1.",
-    link: "#",
-    image: "https://user-images.githubusercontent.com/56845913/212190204-dc68b712-bcb8-42af-962b-52de7992fce0.png" // Add image path for each project
+    id: 2,
+    title: "\"Tank You, Next!\": Bridging Software Engineering Concepts with Gameplay",
+    description: "For our \"Software Engineering\" lecture, my colleague and I embarked on an endeavor to not just apply theoretical project management principles but to bring them alive in the form of a tangible, interactive game. \"Tank You, Next!\" is the result – a 3D tank game, integrating C++ and the OpenGL graphics library. Currently ongoing, we are gearing up for a second sprint to further enhance the gaming experience.",
+    link: "https://github.com/mj0stjo/Tank-You-Next-",
+    image: "/tyn.png"
   },
   {
-    id: 2,
-    title: "Project 2",
-    description: "Brief description of project 2.",
-    link: "#",
-    image: "/path/to/image2.jpg"
+    id: 1,
+    title: "OpenGL Demo Scene",
+    description: "My initial venture into computer graphics, crafted during my \"Computer Graphics\" course. This demo takes you through two distinct scenes. We start with the basics of rendering and shading like ambient and diffuse lighting, then transition, and conclude with a shader portraying an endlessly rotating abyss",
+    link: "https://github.com/kastanileel/OpenGLDemoScene",
+    image: "https://user-images.githubusercontent.com/56845913/212190204-dc68b712-bcb8-42af-962b-52de7992fce0.png" // Add image path for each project
   },
   // ... More projects
 ]);
@@ -52,11 +52,11 @@ const projects = ref([
   color: #333;
   background-color: #f8f8f8;
   display: flex;
-  justify-content: center; /* Center the .content-wrapper horizontally */
-  align-items: center;     /* Center the .content-wrapper vertically */
-  height: 100vh;           /* Full viewport height */
+  justify-content: center; /* Center children horizontally */
+  align-items: center;     /* Center children vertically */
+  width: 100%;
+         /* This makes sure your page takes the full viewport height */
 }
-
 .content-wrapper {
   width: 35%; /* Set the width to 50% */
   min-width: 600px;
@@ -67,8 +67,10 @@ const projects = ref([
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
+  width: 100%; /* Ensure the header takes full width */
 }
+
 
 .profile-image {
   width: 50px;

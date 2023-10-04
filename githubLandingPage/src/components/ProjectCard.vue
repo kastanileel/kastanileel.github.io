@@ -3,7 +3,7 @@
     <img :src="image" alt="Project Image" class="project-image">
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
-    <a :href="link" target="_blank">View Project</a>
+    <a :href="link" >View Project</a>
 
   </div>
 </template>
