@@ -35,7 +35,7 @@ function onProjectsBtn() {
 }
 
 function onShaderBtn() {
-  router.push('/shader-library')
+  router.push('/shaders')
 }
 
 

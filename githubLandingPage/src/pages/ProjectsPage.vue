@@ -48,7 +48,7 @@ const projects = ref([
   }
 
 }
-.projects-page {
+.shader-page {
   padding: 2rem;
   font-family: "Fira Code Medium", monospace;
   color: #333;

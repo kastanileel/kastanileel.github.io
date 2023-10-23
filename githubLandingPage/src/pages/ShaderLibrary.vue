@@ -1,39 +1,22 @@
 <template>
-  <div class="article-page">
+  <div class="shader-page">
     <div class="content-wrapper">
       <div class="header">
-        <h1>Blog</h1>
+        <img src="/pb.png" alt="kastanileel" class="profile-image">
+        <h1>Shader Library</h1>
       </div>
-      <div class="markdownArticle" v-if="loaded">
-        <vue-markdown :source="text" />
-      </div>
-
-      <h1 v-if="!loaded"> OOPS! There is no article yet! :(</h1>
 
     </div>
-  </div>
-</template>
+  </div></template>
 
 <script setup lang="ts">
-import VueMarkdown from "vue-markdown-render";
-import { defineProps } from 'vue';
-import {onMounted} from "vue";
-import {ref} from "vue";
+import { ref } from 'vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
-let text = ref('')
-let loaded = ref(false)
-const { category, id } = defineProps(['category', 'id']);
-
-onMounted(async () => {
-  const response = await fetch('/' + category + '/' + id + '.md')
-  text.value = await response.text()
-
-  if(text.value.length > 0){
-    loaded.value = true
-  }
-
-})
 </script>
+
+
+
 
 <style scoped>
 @media (max-width: 700px) {
@@ -43,7 +26,7 @@ onMounted(async () => {
   }
 
 }
-.article-page {
+.shader-page {
   padding: 2rem;
   font-family: "Fira Code Medium", monospace;
   color: #333;
@@ -55,7 +38,7 @@ onMounted(async () => {
   /* This makes sure your page takes the full viewport height */
 }
 .content-wrapper {
-  width: 70%; /* Set the width to 50% */
+  width: 35%; /* Set the width to 50% */
   min-width: 800px;
   max-width: 1300px;
 }
@@ -65,10 +48,15 @@ onMounted(async () => {
   align-items: center;
   gap: 20px;
   justify-content: center;
-  margin-bottom: 100px;
   width: 100%; /* Ensure the header takes full width */
 }
 
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
 h1 {
   font-size: 2.5rem;
@@ -76,8 +64,29 @@ h1 {
   text-align: center; /* Center the text */
 }
 
+.projects-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-content: center; /* Center the grid items */
+}
 
+.project-card {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
 
 h2 {
   font-size: 1.5rem;
@@ -91,17 +100,4 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.markdownArticle {
-  background-color: #ffffff;
-  padding: 2vh 5vw 0 5vw;
-}
-
-
-</style>
-<style>
-img {
-  width: 100%;
-  height: auto;
-}
-
 </style>
