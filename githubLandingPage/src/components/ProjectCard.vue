@@ -1,8 +1,13 @@
 <template>
-  <div class="project-card" @click="clickedCard">
-    <img :src="image" alt="Project Image" class="project-image">
-    <h2>{{ title }}</h2>
-    <p>{{ description }}</p>
+  <div class="project-card" >
+    <div @click="clickedCard">
+      <img :src="image" alt="Project Image" class="project-image">
+      <h2>{{ title }}</h2>
+      <div class="badges">
+        <BadgeComponent v-for="badge in badges" :label="badge" />
+      </div>
+      <p>{{ description }}</p>
+    </div>
     <a :href="link" >view repository</a>
   </div>
 </template>
@@ -11,18 +16,20 @@
 import { defineProps } from 'vue';
 import {router} from "../main.js"
 import VueMarkdown from "vue-markdown-render";
+import BadgeComponent from "./BadgeComponent.vue";
 
 
 const props = defineProps({
   id: Number,
   title: String,
+  badges: Array,
   description: String,
   link: String,
   image: String
 });
 
 function clickedCard() {
-  router.push('/article/' + 'project/'+ props.id);
+  router.push('/blog/' + 'project/'+ props.id);
 }
 
 
@@ -38,8 +45,8 @@ function clickedCard() {
 
 h2 {
   font-size: 1.5rem;
-  margin: 0;
   text-align: center; /* Center the project title */
+  margin: 0.4rem 0 1.0rem;
 }
 
 a {
@@ -48,4 +55,12 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
+.badges {
+ /* align items left */
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* Adjust the gap between badges */
+ }
 </style>

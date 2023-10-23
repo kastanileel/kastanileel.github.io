@@ -11,7 +11,6 @@ import "primeicons/primeicons.css";
 
 
 import ProjectsPage from "@/pages/ProjectsPage.vue";
-import BlogPage from "@/pages/BlogPage.vue";
 import ArticlePage from "@/pages/ArticlePage.vue";
 //import vue router
 import * as VueRouter from 'vue-router'
@@ -21,8 +20,7 @@ import LandingPage from "@/pages/LandingPage.vue";
 const routes  = [
     { path: '/', component: LandingPage },
     { path: '/projects', component: ProjectsPage },
-    { path: '/blog', component: BlogPage },
-    { path: '/article/:category/:id', component: ArticlePage, props: true },
+    { path: '/blog/:category/:id', component: ArticlePage, props: true },
     ]
 
 export const router = VueRouter.createRouter(

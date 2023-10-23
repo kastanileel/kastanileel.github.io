@@ -7,7 +7,7 @@
       </div>
 
       <div class="projects-list">
-        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :link="project.link" />
+        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :badges="project.badges" :link="project.link" />
       </div>
     </div>
   </div></template>
@@ -20,14 +20,16 @@ const projects = ref([
   {
     id: 2,
     title: "\"Tank You, Next!\"",
-    description: "For our \"Software Engineering\" lecture, my colleague and I embarked on an endeavor to not just apply theoretical project management principles but to bring them alive in the form of a tangible, interactive game. \"Tank You, Next!\" is the result – a 3D tank game, integrating C++ and the OpenGL graphics library. Currently ongoing, we are gearing up for a second sprint to further enhance the gaming experience.",
+    badges: [ "C++", "OpenGL", "Project Management", "Software Engineering", "wip"],
+    description: "Parallel to our course \"Software Engineering\" my friend Johannes and I applied our theoretical knowledge in a practical project.",
     link: "https://github.com/mj0stjo/Tank-You-Next-",
     image: "/tyn.png"
   },
   {
     id: 1,
     title: "OpenGL Demo Scene",
-    description: "My initial venture into computer graphics, crafted during my \"Computer Graphics\" course. This demo takes you through two distinct scenes. We start with the basics of rendering and shading like ambient and diffuse lighting, then transition, and conclude with a shader portraying an endlessly rotating abyss",
+    badges: ["C++", "OpenGL", "Computer Graphics"],
+    description: "My initial venture into computer graphics, crafted during my \"Computer Graphics\" course.",
     link: "https://github.com/kastanileel/OpenGLDemoScene",
     image: "https://user-images.githubusercontent.com/56845913/212190204-dc68b712-bcb8-42af-962b-52de7992fce0.png" // Add image path for each project
   },
