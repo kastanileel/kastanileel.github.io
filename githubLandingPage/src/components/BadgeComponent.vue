@@ -22,8 +22,8 @@ onMounted(() => {
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 1;
-  border: black solid 1px;
-  color: #0e0e0e;
+  border: #007BFF solid 2px;
+  color: #007BFF;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;

@@ -25,12 +25,18 @@ let loaded = ref(false)
 const { category, id } = defineProps(['category', 'id']);
 
 onMounted(async () => {
-  const response = await fetch('/' + category + '/' + id + '.md')
-  text.value = await response.text()
+  try {
+    const response = await fetch('/' + category + '/' + id + '.md')
+    text.value = await response.text()
 
-  if(text.value.length > 0){
-    loaded.value = true
+    if(text.value.length > 0){
+      loaded.value = true
+    }
+  } catch (e) {
+    loaded.value = false
   }
+
+
 
 })
 </script>
