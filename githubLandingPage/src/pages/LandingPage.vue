@@ -21,8 +21,40 @@
     </div>
 
 
-
   </div>
+
+  <div class="followUpContent">
+    <!-- Tech Stack Section -->
+    <div class="tech-stack">
+      <h2>Tech Stack</h2>
+      <!-- List your tech stack here -->
+      <ul>
+        <li>JavaScript</li>
+        <li>Vue.js</li>
+        <li>Node.js</li>
+        <!-- ...other tech stack items -->
+      </ul>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>
+        <!-- Insert about me text -->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi tellus.
+      </p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://github.com/your-username" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-username" target="_blank">LinkedIn</a>
+        <!-- ...other links -->
+      </div>
+    </footer>
+  </div>
+
 </template>
 <script setup lang="ts">
 
@@ -114,6 +146,7 @@ header {
   width: auto;
   height: auto;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .fullscreen-bg {
@@ -243,5 +276,52 @@ button {
 .btn-nav:hover {
   background-color: #555;
 }
+
+.followUpContent {
+  width: 100%;
+  z-index: 0;
+  padding: 20px;
+  font-family: "Fira Code Medium", monospace;
+}
+
+.tech-stack,
+.about-me {
+  padding: 20px;
+  background-color: #f9f9f9;  /* Adjust color as necessary */
+}
+
+.tech-stack h2,
+.about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.tech-stack ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tech-stack li {
+  margin-bottom: 5px;
+}
+
+/* Footer Section */
+.footer {
+  padding: 20px;
+  background-color: #333;  /* Adjust color as necessary */
+  color: white;
+}
+
+.footer-links a {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
 
 </style>
