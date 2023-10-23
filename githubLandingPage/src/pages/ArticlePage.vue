@@ -4,10 +4,10 @@
       <div class="header">
         <h1>Blog</h1>
       </div>
-
-      <div class="projects-list">
-        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :badges="project.badges" :link="project.link" />
+      <div class="markdownArticle">
+        <vue-markdown :source="text" />
       </div>
+
     </div>
   </div>
 </template>
@@ -16,10 +16,15 @@
 import VueMarkdown from "vue-markdown-render";
 import { defineProps } from 'vue';
 import {onMounted} from "vue";
+import {ref} from "vue";
+
+let text = ref('')
 
 const { category, id } = defineProps(['category', 'id']);
 
-onMounted(() => {
+onMounted(async () => {
+  const response = await fetch('/' + category + '/' + id + '.md')
+  text.value = await response.text()
 
 })
 </script>
@@ -44,9 +49,9 @@ onMounted(() => {
   /* This makes sure your page takes the full viewport height */
 }
 .content-wrapper {
-  width: 35%; /* Set the width to 50% */
-  min-width: 600px;
-  max-width: 700px;
+  width: 70%; /* Set the width to 50% */
+  min-width: 800px;
+  max-width: 1300px;
 }
 
 .header {
@@ -54,15 +59,10 @@ onMounted(() => {
   align-items: center;
   gap: 20px;
   justify-content: center;
+  margin-bottom: 100px;
   width: 100%; /* Ensure the header takes full width */
 }
 
-
-.profile-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
 
 h1 {
   font-size: 2.5rem;
@@ -70,29 +70,8 @@ h1 {
   text-align: center; /* Center the text */
 }
 
-.projects-list {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-content: center; /* Center the grid items */
-}
 
-.project-card {
-  background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
 
 h2 {
   font-size: 1.5rem;
@@ -106,4 +85,17 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+.markdownArticle {
+  background-color: #ffffff;
+  padding: 2vh 5vw 0 5vw;
+}
+
+
+</style>
+<style>
+img {
+  width: 100%;
+  height: auto;
+}
+
 </style>
