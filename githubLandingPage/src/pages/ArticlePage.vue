@@ -26,7 +26,14 @@ const { category, id } = defineProps(['category', 'id']);
 
 onMounted(async () => {
   try {
-    const response = await fetch('/' + category + '/' + id + '.md')
+    const response = await fetch('/' + category + '/' + id + '.md').then(
+      (response) => {
+        if (!response.ok) {
+          throw new Error("HTTP error " + response.status);
+        }
+        return response;
+      }
+    )
     text.value = await response.text()
 
     if(text.value.length > 0){
