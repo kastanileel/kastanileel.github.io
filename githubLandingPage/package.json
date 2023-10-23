@@ -12,6 +12,7 @@
     "primevue": "^3.26.0",
     "vue": "^3.2.47",
     "vue-glsl": "^1.1.27",
+    "vue-markdown-render": "^2.1.1",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {

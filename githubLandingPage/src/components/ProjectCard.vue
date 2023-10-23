@@ -1,15 +1,17 @@
 <template>
-  <div class="project-card">
+  <div class="project-card" @click="clickedCard">
     <img :src="image" alt="Project Image" class="project-image">
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
-    <a :href="link" >View Project</a>
-
+    <a :href="link" >view repository</a>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
+import {router} from "../main.js"
+import VueMarkdown from "vue-markdown-render";
+
 
 const props = defineProps({
   id: Number,
@@ -18,6 +20,11 @@ const props = defineProps({
   link: String,
   image: String
 });
+
+function clickedCard() {
+  router.push('/article/' + 'project/'+ props.id);
+}
+
 
 </script>
 

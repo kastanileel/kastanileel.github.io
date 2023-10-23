@@ -7,7 +7,7 @@
       </div>
 
       <div class="projects-list">
-        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" />
+        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :link="project.link" />
       </div>
     </div>
   </div></template>
@@ -19,7 +19,7 @@ import ProjectCard from '../components/ProjectCard.vue';
 const projects = ref([
   {
     id: 2,
-    title: "\"Tank You, Next!\": Bridging Software Engineering Concepts with Gameplay",
+    title: "\"Tank You, Next!\"",
     description: "For our \"Software Engineering\" lecture, my colleague and I embarked on an endeavor to not just apply theoretical project management principles but to bring them alive in the form of a tangible, interactive game. \"Tank You, Next!\" is the result – a 3D tank game, integrating C++ and the OpenGL graphics library. Currently ongoing, we are gearing up for a second sprint to further enhance the gaming experience.",
     link: "https://github.com/mj0stjo/Tank-You-Next-",
     image: "/tyn.png"
