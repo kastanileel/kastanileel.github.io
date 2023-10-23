@@ -23,7 +23,6 @@
 
   </div>
 
-  <div class="followUpContent">
     <!-- Tech Stack Section -->
     <div class="tech-stack">
       <h2>Tech Stack</h2>
@@ -53,7 +52,7 @@
         <!-- ...other links -->
       </div>
     </footer>
-  </div>
+
 
 </template>
 <script setup lang="ts">
@@ -277,12 +276,6 @@ button {
   background-color: #555;
 }
 
-.followUpContent {
-  width: 100%;
-  z-index: 0;
-  padding: 20px;
-  font-family: "Fira Code Medium", monospace;
-}
 
 .tech-stack,
 .about-me {
