@@ -14,7 +14,7 @@
 
     <div class="content-overlay">
       <div class="blurredField">
-        <h1 class="typewriter">KASTANILEEL</h1>
+        <h1 class="typewriter">DANIEL-KASTANILEEL</h1>
         <p class="profession">SOFTWARE DEVELOPER</p>
       </div>
     </div>
@@ -80,24 +80,19 @@
   </div>
 
 
-
-  <!-- About Me Section -->
-  <div class="about-me">
-    <h2>About Me</h2>
-    <p>
-      <!-- Insert about me text -->
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi tellus.
-    </p>
-  </div>
-
     <!-- Footer Section -->
-    <footer class="footer">
-      <div class="footer-links">
-        <a href="https://github.com/your-username" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-username" target="_blank">LinkedIn</a>
-        <!-- ...other links -->
-      </div>
-    </footer>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/kastanileel" target="_blank">GitHub</a>
+      <a href="mailto:stemda01@thu.de">Email</a>
+      <a href="https://www.linkedin.com/in/your-username" target="_blank" v-if="false">LinkedIn</a>
+      <a href="https://discordapp.com/invite/your-discord" target="_blank" v-if="false">Discord</a>
+    </div>
+    <div class="copyright">
+      © Copyright 2023 Daniel Stempfle. <a href="../impressum"  target="_blank">Impressum</a>. Last updated: October 24, 2023.
+    </div>
+  </footer>
+
 
 
 </template>
@@ -115,6 +110,9 @@ function onShaderBtn() {
   router.push('/shaders')
 }
 
+function impressClick(){
+  router.push('/impressum')
+}
 
 
 
@@ -406,9 +404,14 @@ button {
 
 /* Footer Section */
 .footer {
+  margin-top: 20px;
   padding: 20px;
-  background-color: #333;  /* Adjust color as necessary */
+  background-color: #333;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-links a {
@@ -420,6 +423,12 @@ button {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+.copyright a {
+  color: white;
+  text-decoration: none;
+}
+
 
 
 
