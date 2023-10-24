@@ -1,4 +1,7 @@
 <template>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  </head>
 
   <div class="landing-page">
     <div class="header">
@@ -23,26 +26,69 @@
 
   </div>
 
-    <!-- Tech Stack Section -->
-    <div class="tech-stack">
-      <h2>Tech Stack</h2>
-      <!-- List your tech stack here -->
-      <ul>
-        <li>JavaScript</li>
-        <li>Vue.js</li>
-        <li>Node.js</li>
-        <!-- ...other tech stack items -->
-      </ul>
-    </div>
 
-    <!-- About Me Section -->
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>
-        <!-- Insert about me text -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi tellus.
-      </p>
+  <!-- Tech Stack Section -->
+  <!-- Tech Stack Section -->
+  <!-- Tech Stack Section -->
+  <div class="tech-stack">
+    <h2>Tech Stack</h2>
+    <p>
+      For my professional projects, university projects, and private projects, I've worked with a wide range of different and interesting technologies.
+    </p>
+    <div class="tech-stack-categories">
+      <div class="tech-stack-category">
+        <h3>Languages</h3>
+        <ul class="tech-stack-list">
+          <li><i class="devicon-cplusplus-plain colored"></i></li>
+          <li><i class="devicon-java-plain colored"></i></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" class="csharp-icon"></li>
+
+        </ul>
+      </div>
+      <div class="tech-stack-category">
+        <h3>CG & GPU Compute</h3>
+        <ul class="tech-stack-list">
+          <li><i class="devicon-opengl-plain colored"></i></li>
+          <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenCL_logo.svg" alt="OpenCL" class="tech-icon"></li>
+
+        </ul>
+      </div>
+      <div class="tech-stack-category">
+        <h3>Web Development</h3>
+        <ul class="tech-stack-list">
+          <li><i class="devicon-html5-plain colored"></i></li>
+          <li><i class="devicon-css3-plain colored"></i></li>
+          <li><i class="devicon-javascript-plain colored"></i></li>
+          <li><i class="devicon-threejs-original colored"></i></li>
+        </ul>
+      </div>
+      <div class="tech-stack-category">
+        <h3>Containers & Databases</h3>
+        <ul class="tech-stack-list">
+          <li><i class="devicon-docker-plain colored"></i></li>
+          <li><i class="devicon-mysql-plain colored"></i></li>
+          <li><i class="devicon-mongodb-plain colored"></i></li>
+        </ul>
+      </div>
+      <div class="tech-stack-category">
+        <h3>Game Development</h3>
+        <ul class="tech-stack-list">
+          <li><i class="devicon-unity-original colored"></i></li>
+        </ul>
+      </div>
     </div>
+  </div>
+
+
+
+  <!-- About Me Section -->
+  <div class="about-me">
+    <h2>About Me</h2>
+    <p>
+      <!-- Insert about me text -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi tellus.
+    </p>
+  </div>
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -277,26 +323,86 @@ button {
 }
 
 
-.tech-stack,
-.about-me {
+/* Updated styles for Tech Stack section */
+/* Updated styles for Tech Stack section */
+.tech-stack {
+  text-align: center;
   padding: 20px;
-  background-color: #f9f9f9;  /* Adjust color as necessary */
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255, 100, 0, 0.43), rgba(250, 190, 0, 0.46)); /* Gradient background color */
+  border-radius: 10px; /* Rounded corners */
+  color: #fff; /* Text color */
+  font-family: Arial, sans-serif; /* Font family */
 }
 
-.tech-stack h2,
-.about-me h2 {
-  font-size: 2rem;
+.tech-stack h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tech-stack p {
+  font-size: 1.2rem;
+  color: #3f3f3f;
+  margin-bottom: 20px;
+}
+
+.tech-stack-categories {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+}
+
+.tech-stack-category {
+  text-align: center;
+  flex: 0 0 calc(50% - 20px); /* Adjust the width of each category */
+  margin-bottom: 20px; /* Add spacing between categories */
+}
+
+.tech-stack-category h3 {
+  font-size: 1.8rem;
+  color: #333;
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
-.tech-stack ul {
-  list-style-type: none;
+.tech-stack-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
   padding: 0;
 }
 
-.tech-stack li {
-  margin-bottom: 5px;
+.tech-stack-list li {
+  margin: 0 10px;
+  border: 1px solid #333;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 4.0rem;
+  color: #FFF;
 }
+
+
+/* Add styles for tech icons */
+.tech-icon {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin: 0 7px; /* Add spacing between icons */
+}
+
+.csharp-icon {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin: 0 7px; /* Add spacing between icons */
+  /*scale image*/
+  transform: scale(2.0);
+}
+
 
 /* Footer Section */
 .footer {
