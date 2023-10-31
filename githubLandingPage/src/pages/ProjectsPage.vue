@@ -18,6 +18,14 @@ import ProjectCard from '../components/ProjectCard.vue';
 
 const projects = ref([
   {
+    id: 4,
+    title: "The CPU-Crunch-Engine",
+    badges: ["Java", "Engine-Development", "Software Rasterization", "wip"],
+    description: "A game engine written in plain Java, without utilizing the GPU for my course \"Game Programming\". Due to the restrictions of the course, the engine is not based on any graphic framework.",
+    link: "https://github.com/kastanileel/CPUCrunchEngine",
+    image: "https://user-images.githubusercontent.com/56845913/274130553-aae9ebac-9528-471b-89c4-78afc767a3f4.png"
+  },
+  {
     id: 2,
     title: "\"Tank You, Next!\"",
     badges: [ "C++", "OpenGL", "Project Management", "Software Engineering", "wip"],
@@ -32,6 +40,13 @@ const projects = ref([
     description: "My initial venture into computer graphics, crafted during my \"Computer Graphics\" course.",
     link: "https://github.com/kastanileel/OpenGLDemoScene",
     image: "https://user-images.githubusercontent.com/56845913/212190204-dc68b712-bcb8-42af-962b-52de7992fce0.png" // Add image path for each project
+  },
+  {
+    id: 3,
+    title: "\"Shadow Friend\" - A game made for Brackeys Game Jam 2022.2",
+    badges: ["C#", "Unity", "Game Development", "Game Jam"],
+    link: "https://kastanileel.itch.io/shadow-friend",
+    image: "https://img.itch.zone/aW1hZ2UvMTY4MDYwNC85OTAwMTk0LnBuZw==/original/3xmhJ2.png",
   },
   // ... More projects
 ]);

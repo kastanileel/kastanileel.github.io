@@ -8,7 +8,7 @@
       </div>
       <p>{{ description }}</p>
     </div>
-    <a :href="link" >view repository</a>
+    <a :href="link" >view</a>
   </div>
 </template>
 

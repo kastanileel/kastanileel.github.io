@@ -20,6 +20,10 @@
     </div>
     <div class="middle-buttons">
       <button class="btn-nav" @click="onProjectsBtn">PROJECTS</button>
+
+      <button class="btn-nav" @click="onTechStackBtn">TECH STACK
+      <br>
+        ↓</button>
       <button class="btn-nav" @click="onShaderBtn">SHADER LIBRARY</button>
     </div>
 
@@ -30,10 +34,10 @@
   <!-- Tech Stack Section -->
   <!-- Tech Stack Section -->
   <!-- Tech Stack Section -->
-  <div class="tech-stack">
+  <div class="tech-stack" id="tech-stack-anchor">
     <h2>Tech Stack</h2>
     <p>
-      For my professional projects, university projects, and private projects, I've worked with a wide range of different and interesting technologies.
+      For my professional projects, university projects, and private projects, I've worked and experimented with a wide range of different and interesting technologies.
     </p>
     <div class="tech-stack-categories">
       <div class="tech-stack-category">
@@ -42,6 +46,7 @@
           <li><i class="devicon-cplusplus-plain colored"></i></li>
           <li><i class="devicon-java-plain colored"></i></li>
           <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" class="csharp-icon"></li>
+          <li><i class="devicon-python-plain colored"></i></li>
 
         </ul>
       </div>
@@ -89,7 +94,7 @@
       <a href="https://discordapp.com/invite/your-discord" target="_blank" v-if="false">Discord</a>
     </div>
     <div class="copyright">
-      © Copyright 2023 Daniel Stempfle. <a href="../impressum"  target="_blank">Impressum</a>. Last updated: October 24, 2023.
+      © Copyright 2023 Daniel Stempfle. <a @click="router.push('./impressum')"  target="_blank" class="impressumBtn">Impressum</a>. Last updated: October 24, 2023.
     </div>
   </footer>
 
@@ -104,6 +109,12 @@ import FragmentShaderBox from "../components/FragmentShaderBox.vue";
 
 function onProjectsBtn() {
   router.push('/projects')
+}
+
+function onTechStackBtn() {
+ // scroll to tech stack anchor
+  const anchor = document.getElementById('tech-stack-anchor')
+  anchor.scrollIntoView({behavior: 'smooth'})
 }
 
 function onShaderBtn() {
@@ -326,7 +337,7 @@ button {
 .tech-stack {
   text-align: center;
   padding: 20px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background: linear-gradient(135deg, rgba(255, 100, 0, 0.43), rgba(250, 190, 0, 0.46)); /* Gradient background color */
   border-radius: 10px; /* Rounded corners */
@@ -429,7 +440,18 @@ button {
   text-decoration: none;
 }
 
+.impressumBtn {
+  border: none;
+  background-color: #ffffff00;
+  color: white;
+}
 
+.impressumBtn:hover {
+  text-decoration: underline;
+  background-color: #5e5c5c;
+  color: white;
+  cursor: pointer;
+}
 
 
 </style>
