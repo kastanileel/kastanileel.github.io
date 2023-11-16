@@ -84,7 +84,6 @@
     </div>
   </div>
 
-
     <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-links">

@@ -1,47 +1,54 @@
 <template>
   <div class="shader-page">
-    <div class="content-wrapper">
       <div class="header">
         <img src="/pb.png" alt="kastanileel" class="profile-image">
         <h1>Shader Library</h1>
       </div>
-
+      <div class="entries">
+        <ShaderLibraryEntry v-for="entry in entries" :link="entry.link" :title="entry.title"
+                            :description="entry.description" :dark="entry.id % 2 === 1"/>
+      </div>
     </div>
-  </div></template>
+</template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import ProjectCard from '../components/ProjectCard.vue';
+import {ref} from 'vue';
+import ShaderLibraryEntry from "../components/ShaderLibraryEntry.vue";
+
+const entries = ref([
+  {
+    id: 1,
+    link: "https://www.shadertoy.com/embed/mlsBDl?gui=true&t=10&paused=true&muted=false",
+    title: "Sylized Sunset over the Sea",
+    description: "A stylized sunset over the sea. The waves are raytraced and simulated through sin-waves. The shiny outline is achieved by using a neat trick.",
+  },
+  {
+    id: 0,
+    link: "https://www.shadertoy.com/embed/DllBDB?gui=true&t=10&paused=true&muted=false",
+    title: "First Raymarcher with Phong Shading",
+    description: "My first raymarcher with phong shading. I really got a soft spot for the way SDFs intersect! ",
+  }
+])
+
 
 </script>
 
-
-
-
 <style scoped>
-@media (max-width: 700px) {
-  .content-wrapper{
-    width: 100% !important;
-    min-width: 0px !important;
-  }
 
-}
+
 .shader-page {
   padding: 2rem;
   font-family: "Fira Code Medium", monospace;
   color: #333;
   background-color: #f8f8f8;
-  display: flex;
+
   justify-content: center; /* Center children horizontally */
-  align-items: center;     /* Center children vertically */
+  align-items: center; /* Center children vertically */
   width: 100%;
   /* This makes sure your page takes the full viewport height */
 }
-.content-wrapper {
-  width: 35%; /* Set the width to 50% */
-  min-width: 800px;
-  max-width: 1300px;
-}
+
+
 
 .header {
   display: flex;
@@ -64,40 +71,13 @@ h1 {
   text-align: center; /* Center the text */
 }
 
-.projects-list {
+.entries {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-content: center; /* Center the grid items */
+  min-height: 400px;
+  gap: 20px;
 }
 
-.project-card {
-  background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.project-card:hover {
-  transform: scale(1.03);
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin: 0;
-  text-align: center; /* Center the project title */
-}
-
-a {
-  align-self: center; /* Center the link horizontally */
-  color: #007BFF;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 </style>
