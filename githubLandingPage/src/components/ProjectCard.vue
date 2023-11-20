@@ -2,6 +2,8 @@
   <div class="project-card" >
     <div @click="clickedCard">
       <img :src="image" alt="Project Image" class="project-image">
+      <button v-if="blog" class="goto-article-button" @click="clickedBlogBtn">Goto Article</button>
+
       <h2>{{ title }}</h2>
       <div class="badges">
         <BadgeComponent v-for="badge in badges" :label="badge" />
@@ -25,10 +27,15 @@ const props = defineProps({
   badges: Array,
   description: String,
   link: String,
-  image: String
+  image: String,
+  blog: Boolean
 });
 
-function clickedCard() {
+function clickedCard(){
+  console.log("clicked card")
+  window.location.href = props.link;
+}
+function clickedBlogBtn() {
   router.push('/blog/' + 'project/'+ props.id);
 }
 
@@ -41,8 +48,8 @@ function clickedCard() {
   height: 200px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
+  position: relative; /* Add position relative to the image container */
 }
-
 h2 {
   font-size: 1.5rem;
   text-align: center; /* Center the project title */
@@ -63,4 +70,21 @@ a {
   justify-content: center;
   gap: 0.5rem; /* Adjust the gap between badges */
  }
+
+.goto-article-button {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom */
+  right: 10px; /* Adjust the distance from the right */
+  background-color: #007BFF;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.goto-article-button:hover {
+  background-color: #0056b3; /* Change the button color on hover */
+}
 </style>

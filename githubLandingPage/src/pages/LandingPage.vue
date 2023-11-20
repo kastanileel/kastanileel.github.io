@@ -166,6 +166,7 @@ html, body {
   }
 
   .content-overlay {
+    top: 30% !important;
     transform: translate(-50%, -50%);
     padding: 0 10px; /* Padding to ensure text doesn't touch screen edge */
   }
