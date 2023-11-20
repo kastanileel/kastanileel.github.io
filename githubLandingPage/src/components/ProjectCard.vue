@@ -1,8 +1,11 @@
 <template>
   <div class="project-card" >
     <div @click="clickedCard">
-      <img :src="image" alt="Project Image" class="project-image">
-      <button v-if="blog" class="goto-article-button" @click="clickedBlogBtn">Goto Article</button>
+      <div class="imageContainer">
+        <img :src="image" alt="Project Image" class="project-image">
+        <button v-if="blog" class="goto-article-button" @click.stop="clickedBlogBtn">Article</button>
+      </div>
+
 
       <h2>{{ title }}</h2>
       <div class="badges">
@@ -10,7 +13,7 @@
       </div>
       <p>{{ description }}</p>
     </div>
-    <a :href="link" >view</a>
+    <a :href="link" >View!</a>
   </div>
 </template>
 
@@ -48,7 +51,6 @@ function clickedBlogBtn() {
   height: 200px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
-  position: relative; /* Add position relative to the image container */
 }
 h2 {
   font-size: 1.5rem;
@@ -72,11 +74,12 @@ a {
  }
 
 .goto-article-button {
+  font-size: 16px;
   position: absolute;
-  bottom: 10px; /* Adjust the distance from the bottom */
-  right: 10px; /* Adjust the distance from the right */
-  background-color: #007BFF;
-  color: white;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  background-color: #6ae8f5;
+  color: #232323;
   padding: 5px 10px;
   border: none;
   border-radius: 4px;
@@ -84,7 +87,9 @@ a {
   transition: background-color 0.3s ease;
 }
 
-.goto-article-button:hover {
-  background-color: #0056b3; /* Change the button color on hover */
+
+.imageContainer{
+  position: relative;
 }
+
 </style>

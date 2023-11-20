@@ -7,7 +7,7 @@
       </div>
 
       <div class="projects-list">
-        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :badges="project.badges" :link="project.link" />
+        <ProjectCard v-for="project in projects" :key="project.id" :id="project.id" :image="project.image" :description="project.description" :title="project.title" :badges="project.badges" :link="project.link" :blog="project.blog" />
       </div>
     </div>
   </div></template>
