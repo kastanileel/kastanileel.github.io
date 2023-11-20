@@ -3,6 +3,7 @@
       <div class="halfSide">
         <iframe :src=link allowfullscreen width="100%" height="100%"></iframe>
       </div>
+
       <div class="halfSide">
         <div class="text">
           <h2>{{ title }}</h2>
@@ -78,6 +79,12 @@ onMounted(() => {
 
 .text {
   padding: 1rem;
+}
+
+
+div#shaderInfo {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  /* other properties... */
 }
 
 </style>

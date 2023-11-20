@@ -93,7 +93,7 @@
       <a href="https://discordapp.com/invite/your-discord" target="_blank" v-if="false">Discord</a>
     </div>
     <div class="copyright">
-      © Copyright 2023 Daniel Stempfle. <a @click="router.push('./impressum')"  target="_blank" class="impressumBtn">Impressum</a>. Last updated: October 24, 2023.
+      © Copyright 2023 Daniel Stempfle. <a @click="router.push('./impressum')"  target="_blank" class="impressumBtn">Impressum</a>. Last updated: November 20, 2023.
     </div>
   </footer>
 
@@ -152,6 +152,8 @@ html, body {
 
   h1 {
     font-size: 2.5rem;  /* Slightly smaller font size */
+    /*line break*/
+    white-space: normal !important;
   }
 
   .profession {
@@ -170,6 +172,7 @@ html, body {
 
   .middle-buttons {
     gap: 5px;  /* Reduced gap for mobile */
+    flex-direction: column !important;  /* Stack buttons vertically */
 
   }
 
@@ -223,7 +226,7 @@ button {
   gap: 10px;
   z-index: 1;
   position: absolute;
-  top: 60%;  /* Adjust as necessary to position vertically */
+  top: 70%;  /* Adjust as necessary to position vertically */
   left: 50%;  /* Horizontal centering start point */
   transform: translate(-50%, -50%);  /* Center the element from its middle, not its top-left corner */
 }

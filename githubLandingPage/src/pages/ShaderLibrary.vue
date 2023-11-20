@@ -18,13 +18,13 @@ import ShaderLibraryEntry from "../components/ShaderLibraryEntry.vue";
 const entries = ref([
   {
     id: 1,
-    link: "https://www.shadertoy.com/embed/mlsBDl?gui=true&t=10&paused=true&muted=false",
+    link: "https://www.shadertoy.com/embed/mlsBDl?t=10&paused=true&muted=true",
     title: "Sylized Sunset over the Sea",
     description: "A stylized sunset over the sea. The waves are raytraced and simulated through sin-waves. The shiny outline is achieved by using a neat trick.",
   },
   {
     id: 0,
-    link: "https://www.shadertoy.com/embed/DllBDB?gui=true&t=10&paused=true&muted=false",
+    link: "https://www.shadertoy.com/embed/DllBDB?gui=true&t=10&paused=true&muted=true",
     title: "First Raymarcher with Phong Shading",
     description: "My first raymarcher with phong shading. I really got a soft spot for the way SDFs intersect! ",
   }

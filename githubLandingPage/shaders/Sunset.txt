@@ -1,0 +1,152 @@
+vec4 nPlane= vec4(0, 1., 0., 2.2);
+float iSpecular = .6;
+float iDiffuse = .3;
+float iAmbient = .1;
+
+// SDF for ocean
+float sdfPlane( vec3 p, vec4 n ){
+
+  // Num of waves
+  const int num_waves = 6;
+
+  // Modify frequencies and amplitudes to change water
+
+  // Wave direction
+  vec2 waveDirection = normalize(vec2(.6, .6));
+
+  //calculate wave
+  float result = 0.0;
+  for(int i = 0; i < 6; i++) {
+
+    float freq = .2;
+    float ampl = .6;
+
+    if(i == 1){
+        freq = .3;
+        ampl = .4;
+    }
+    else if(i == 2){
+        freq = .5;
+        ampl = .3;
+    }
+    else if(i == 3){
+        freq = .7;
+        ampl = .1;
+    }
+    else if(i == 4){
+        freq = 1.;
+        ampl = .004;
+    }
+    else if(i == 5){
+        freq = 2.;
+        ampl = .001;
+    }
+
+
+      vec2 waveFront = freq * vec2(p.x * waveDirection.x, p.z * waveDirection.y) + iTime;
+      result += ampl * (sin(2.*waveFront.x)  + sin(2. * waveFront.y)*2.) *.5;
+  }
+
+  // sdf formula for plane + wave height
+  return dot(p,normalize(n.xyz)) + n.w + result;
+}
+
+
+// SDF for sun
+float sdfCircle(vec2 p){
+
+    float radius = .4;
+    vec2 center = vec2(.0, .5);
+
+    return length(p-center) - radius;
+
+}
+
+
+vec3 getNormalWave(vec3 p){
+
+  vec2 offset = vec2(0.001, 0);
+
+  float gradX = sdfPlane(p + offset.xyy, nPlane) - sdfPlane(p - offset.xyy, nPlane);
+  float gradY = sdfPlane(p + offset.yxy, nPlane) - sdfPlane(p - offset.yxy, nPlane);
+  float gradZ = sdfPlane(p + offset.yyx, nPlane) - sdfPlane(p - offset.yyx, nPlane);
+
+  return normalize(vec3(gradX, gradY, gradZ));
+
+}
+
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    vec2 uv = fragCoord/iResolution.xy;
+    uv -= 0.5;
+    uv *= 2.;
+    uv.x *= iResolution.x/iResolution.y;
+
+
+    vec3 lightRay = normalize(vec3(0., 1.0, -1.));
+    vec3 waterCol = vec3(.1, .2, .8);
+
+    vec3 col = vec3(.0);
+
+    //origin of rays
+    const vec3 ro = vec3(0., .7, 8.);
+    //normalized direction of rays
+    vec3 rd = normalize(vec3(uv, 0.) - ro);
+
+
+    float fogFactor;
+    float totalMarchedDist = .0;
+    bool hit = false;
+
+    for(int i = 0; i< 200; i ++){
+
+        float it = float(i);
+        vec3 rayPos = ro + (totalMarchedDist + 0.001 * it *it )* rd;
+
+        float dist = sdfPlane(rayPos, nPlane);
+        totalMarchedDist += dist;
+
+        // ray march hit
+        if(dist < .001){
+
+            // phong shading
+            vec3 normal = getNormalWave(rayPos);
+            float diffuseLight = dot(normal, vec3(lightRay.xy, lightRay.z));
+            float specularLight = dot(reflect(lightRay,normal), normalize(rayPos - ro));
+            specularLight = pow(specularLight, 12.);
+            specularLight = iSpecular * max(specularLight, 0.);
+            diffuseLight = iDiffuse * max(diffuseLight, 0.);
+
+            float light =   iAmbient + diffuseLight + specularLight;
+
+            col=waterCol * light;
+            hit = true;
+
+            if(totalMarchedDist > 160.)
+                hit = false;
+
+            break;
+        }
+
+    hit = false;
+    fogFactor = pow(0.0215 *it, 2.5);
+
+    }
+
+    fragColor = vec4(mix(col ,vec3(1., (uv.y * uv.y)/1.1, .0) ,fogFactor) ,1.0);
+
+    // ray didnt hit plane => calculate sky
+    if(!hit){
+
+        float d = sdfCircle(uv);
+        d = max(0., d);
+        d = smoothstep(d,0.0, 0.05);
+        d = 1.0-d;
+
+
+        vec4 skyCol = vec4(mix(vec3(.1, .1, 1.), vec3(1., .2, 0.1), 1. - (2.*uv.y) + 1.2),.5);
+        fragColor = vec4(mix(vec3(1., (uv.y * uv.y)/.9, .1), skyCol.xyz,1.-d), 1.);
+
+    }
+}
