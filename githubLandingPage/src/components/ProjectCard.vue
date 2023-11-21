@@ -66,7 +66,9 @@ a {
 }
 
 .badges {
- /* align items left */
+  max-width: 100%;
+  flex-wrap: wrap;
+  /* align items left */
   align-self: flex-start;
   display: flex;
   justify-content: center;
@@ -90,6 +92,12 @@ a {
 
 .imageContainer{
   position: relative;
+}
+
+@media (max-width: 500px) {
+  .project-card {
+    width: 96vw;
+  }
 }
 
 </style>
