@@ -17,6 +17,11 @@ import ShaderLibraryEntry from "../components/ShaderLibraryEntry.vue";
 
 const entries = ref([
   {
+    id: 2,
+    link: "https://www.shadertoy.com/embed/DlVyWy?gui=true&t=10&paused=true&muted=true",
+    description: "Testing reflections in raymarching. Also rotating SDFs when intersecting smoothly looks awesome!",
+  },
+  {
     id: 1,
     link: "https://www.shadertoy.com/embed/mlsBDl?t=10&paused=true&muted=true",
     title: "Sylized Sunset over the Sea",
