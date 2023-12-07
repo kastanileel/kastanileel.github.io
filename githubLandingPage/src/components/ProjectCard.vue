@@ -96,8 +96,27 @@ a {
 
 @media (max-width: 500px) {
   .project-card {
-    width: 96vw;
+    width: 96vw !important;
   }
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-card:hover {
+  transform: scale(1.04);
+
 }
 
 </style>

@@ -63,8 +63,7 @@ const projects = ref([
 <style scoped>
 @media (max-width: 700px) {
   .content-wrapper{
-    width: 100% !important;
-    min-width: 0px !important;
+    min-width: 200px !important;
   }
 
 }
@@ -81,7 +80,7 @@ const projects = ref([
 }
 .content-wrapper {
   width: 35%; /* Set the width to 50% */
-  min-width: 600px;
+  min-width: 300px;
   max-width: 700px;
 }
 
