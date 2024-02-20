@@ -2,8 +2,12 @@
   <div class="project-card" >
     <div @click="clickedCard">
       <div class="imageContainer">
-        <img :src="image" alt="Project Image" class="project-image">
-        <button v-if="blog" class="goto-article-button" @click.stop="clickedBlogBtn">Article</button>
+        <img :src="image" alt="Project Image" class="project-image" v-if="image">
+
+        <video controls="controls" width="800" height="600" name="Video Name" v-if="video">
+          <source :src="video">
+        </video>
+
       </div>
 
 
@@ -31,7 +35,8 @@ const props = defineProps({
   description: String,
   link: String,
   image: String,
-  blog: Boolean
+  video: String,
+  blog: Boolean,
 });
 
 function clickedCard(){
