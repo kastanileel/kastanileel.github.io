@@ -123,6 +123,13 @@ const projects = ref([
   max-width: 700px;
 }
 
+@media (min-width: 700px) {
+  .content-wrapper {
+    width: 80% !important; /* Set the width to 100% on smaller screens */
+    max-width: 100%;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -152,21 +159,22 @@ h1 {
   justify-content: center; /* Center the grid items */
 }
 
-.project-card {
-  background-color: #fff;
-  padding: 1rem;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+/* Media query for larger screens */
+@media (min-width: 700px) {
+  .projects-list {
+    grid-template-columns: 1fr  ;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  }
 }
 
-.project-card:hover {
-  transform: scale(1.03);
+/* Media query for mobile screens */
+@media (max-width: 700px) {
+  .projects-list {
+    grid-template-columns: 1fr; /* One column on mobile screens */
+
+  }
 }
+
 
 h2 {
   font-size: 1.5rem;

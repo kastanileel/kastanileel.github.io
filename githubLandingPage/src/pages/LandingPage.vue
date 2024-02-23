@@ -78,7 +78,7 @@
       <div class="tech-stack-category">
         <h3>Game Development</h3>
         <ul class="tech-stack-list">
-          <li><i class="devicon-unity-original colored"></i></li>
+          <li><i class="devicon-unity-plain-wordmark colored"></i></li>
         </ul>
       </div>
     </div>
@@ -93,7 +93,7 @@
       <a href="https://discordapp.com/invite/your-discord" target="_blank" v-if="false">Discord</a>
     </div>
     <div class="copyright">
-      © Copyright 2023 Daniel Stempfle. <a @click="router.push('./impressum')"  target="_blank" class="impressumBtn">Impressum</a>. Last updated: November 20, 2023.
+      © Copyright 2023 Daniel Stempfle. <a @click="router.push('./impressum')"  target="_blank" class="impressumBtn">Impressum</a>. Last updated: February 22, 2024.
     </div>
   </footer>
 

@@ -1,10 +1,10 @@
 <template>
   <div class="project-card" >
-    <div @click="clickedCard">
+    <div @click="clickedCard" style="align-items: center">
       <div class="imageContainer">
         <img :src="image" alt="Project Image" class="project-image" v-if="image">
 
-        <video controls="controls" width="800" height="600" name="Video Name" v-if="video">
+        <video controls="controls"  v-if="video" class="project-video">
           <source :src="video">
         </video>
 
@@ -16,8 +16,9 @@
         <BadgeComponent v-for="badge in badges" :label="badge" />
       </div>
       <p>{{ description }}</p>
+      <a :href="link" >View!</a>
     </div>
-    <a :href="link" >View!</a>
+
   </div>
 </template>
 
@@ -57,6 +58,15 @@ function clickedBlogBtn() {
   object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
+
+.project-video {
+  width: 100%;
+  /*fit the video to the container*/
+  object-fit: contain;
+
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+}
 h2 {
   font-size: 1.5rem;
   text-align: center; /* Center the project title */
@@ -64,10 +74,19 @@ h2 {
 }
 
 a {
-  align-self: center; /* Center the link horizontally */
-  color: #007BFF;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: 2px solid #007BFF;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
   text-decoration: none;
-  transition: color 0.3s ease;
+}
+
+a:hover {
+  background-color: #007BFF;
+  color: white;
 }
 
 .badges {
@@ -97,6 +116,7 @@ a {
 
 .imageContainer{
   position: relative;
+  width: 100% !important;
 }
 
 @media (max-width: 500px) {
@@ -115,7 +135,6 @@ a {
   max-width: 100%;
 
   display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
