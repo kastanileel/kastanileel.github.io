@@ -4,9 +4,11 @@
       <div class="imageContainer">
         <img :src="image" alt="Project Image" class="project-image" v-if="image">
 
-        <video controls="controls"  v-if="video" class="project-video">
-          <source :src="video">
-        </video>
+          <video controls="controls" class="project-image" v-if="video">
+            <source :src="video">
+          </video>
+
+
 
       </div>
 
@@ -16,7 +18,13 @@
         <BadgeComponent v-for="badge in badges" :label="badge" />
       </div>
       <p>{{ description }}</p>
-      <a :href="link" >View!</a>
+
+      <!-- Spacer Div -->
+      <div class="spacer"></div>
+
+      <div class="linkWrapper">
+        <a :href="link" >View!</a>
+      </div>
     </div>
 
   </div>
@@ -53,30 +61,52 @@ function clickedBlogBtn() {
 
 <style scoped>
 .project-image {
-  width: 100%;
+  width: 80vw;
   height: 200px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
 
-.project-video {
-  width: 100%;
-  /*fit the video to the container*/
-  object-fit: contain;
-
-  height: 200px;
-  border-radius: 8px 8px 0 0;
+@media (min-width: 700px) {
+  .project-image {
+    width: 80vw !important;
+    max-width: 100% !important;
+  }
 }
+@media (max-width: 700px) {
+  .project-image {
+    width: 100% !important;
+  }
+}
+
+.spacer {
+  flex-grow: 1; /* Takes all available space */
+}
+
 h2 {
   font-size: 1.5rem;
   text-align: center; /* Center the project title */
   margin: 0.4rem 0 1.0rem;
 }
 
+.linkWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 a {
+  position: absolute;
+
+  /* put element on the bottom */
+  bottom: 0;
+  width: 100%;
   display: block;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 10px 20px;
   border: 2px solid #007BFF;
   border-radius: 4px;
@@ -134,7 +164,11 @@ a:hover {
   width: 100%;
   max-width: 100%;
 
+  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   gap: 10px;
 }
 

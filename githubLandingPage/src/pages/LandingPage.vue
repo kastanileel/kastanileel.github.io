@@ -88,7 +88,7 @@
   <footer class="footer">
     <div class="footer-links">
       <a href="https://github.com/kastanileel" target="_blank">GitHub</a>
-      <a href="mailto:stemda01@thu.de">Email</a>
+      <a href="mailto:stempfledaniel@gmx.de">Email</a>
       <a href="https://www.linkedin.com/in/your-username" target="_blank" v-if="false">LinkedIn</a>
       <a href="https://discordapp.com/invite/your-discord" target="_blank" v-if="false">Discord</a>
     </div>

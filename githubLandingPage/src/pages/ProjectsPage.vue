@@ -162,7 +162,7 @@ h1 {
 /* Media query for larger screens */
 @media (min-width: 700px) {
   .projects-list {
-    grid-template-columns: 1fr  ;
+    grid-template-columns: repeat( 2, 1fr)  ;
 
   }
 }
