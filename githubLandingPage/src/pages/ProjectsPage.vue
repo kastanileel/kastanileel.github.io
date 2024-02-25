@@ -24,7 +24,7 @@ const projects = ref([
     title: "Royal Tracer",
     badges: ["OpenCL", "C++", "Path tracing", "GPU Programming", "JS", "ThreeJS"],
     description: "Pathtracer with webbased Scene Editor and a wip Animation System.",
-    link: "https://github.com/Royal-Project-Group/royaltracer/assets/56845913/507632a6-aa00-459a-bf3e-cd489b029112",
+    link: "https://github.com/Royal-Project-Group/royaltracer",
     video: "/royaltracer.mov",
     blog: false
   },
@@ -62,7 +62,7 @@ const projects = ref([
     badges: [ "Python", "Tensorflow", "RNN"],
     description: "Just a simple jupyter notebook for playing around with RNNs in Tensorflow.",
     link: "https://github.com/kastanileel/RNNBenchmarkStock",
-
+    image: "/rnn.png",
     blog: false
   },
   {

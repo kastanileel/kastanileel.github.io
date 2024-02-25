@@ -4,7 +4,7 @@
       <div class="imageContainer">
         <img :src="image" alt="Project Image" class="project-image" v-if="image">
 
-          <video controls="controls" class="project-image" v-if="video">
+          <video controls="controls" class="project-image" v-if="video" autoplay>
             <source :src="video">
           </video>
 
