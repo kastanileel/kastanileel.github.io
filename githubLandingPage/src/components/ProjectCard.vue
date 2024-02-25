@@ -8,6 +8,8 @@
             <source :src="video">
           </video>
 
+        <button v-if="blog" class="goto-article-button" @click.stop="clickedBlogBtn">Article</button>
+
 
 
       </div>
@@ -130,7 +132,7 @@ a:hover {
  }
 
 .goto-article-button {
-  font-size: 16px;
+  font-size: 20px;
   position: absolute;
   top: 10px; /* Adjust the top position as needed */
   right: 10px; /* Adjust the right position as needed */

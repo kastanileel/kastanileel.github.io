@@ -25,8 +25,8 @@ const projects = ref([
     badges: ["OpenCL", "C++", "Path tracing", "GPU Programming", "JS", "ThreeJS"],
     description: "Pathtracer with webbased Scene Editor and a wip Animation System.",
     link: "https://github.com/Royal-Project-Group/royaltracer",
-    video: "/royaltracer.mov",
-    blog: false
+    video: "https://github.com/Royal-Project-Group/royaltracer/assets/56845913/507632a6-aa00-459a-bf3e-cd489b029112",
+    blog: true
   },
   {
     id: 4,
