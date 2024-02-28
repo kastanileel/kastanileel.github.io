@@ -1,7 +1,7 @@
 <template>
     <div v-if="dark" class="shader-card" :style="{backgroundColor:color, color:textColor}">
       <div class="halfSide">
-        <iframe :src=link allowfullscreen width="100%" height="100%"></iframe>
+        <iframe :src=link allowfullscreen width="100%" height="100%" ></iframe>
       </div>
 
       <div class="halfSide" :style="{height: dynamicHeight}">

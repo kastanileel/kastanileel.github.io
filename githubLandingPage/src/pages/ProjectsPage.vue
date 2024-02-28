@@ -20,35 +20,36 @@ import ProjectCard from '../components/ProjectCard.vue';
 
 const projects = ref([
   {
-    id: 5,
+    id: 7,
     title: "Royal Tracer",
     badges: ["OpenCL", "C++", "Path tracing", "GPU Programming", "JS", "ThreeJS"],
-    description: "Pathtracer with webbased Scene Editor and a wip Animation System.",
+    description: "OpenCL pathtracer with a web based scene editor and an animation system." +
+        " In addition to reflections and refractions, the renderer supports textures, bumpmaps and normalmaps, as well as subsurface scattering, BVH acceleration and optimized algorithms like importance sampling and russian roulette.",
     link: "https://github.com/Royal-Project-Group/royaltracer",
     video: "https://github.com/Royal-Project-Group/royaltracer/assets/56845913/507632a6-aa00-459a-bf3e-cd489b029112",
-    blog: true
-  },
-  {
-    id: 4,
-    title: "CPU-Crunch-Engine/ \n Alien Arena Shootout",
-    badges: ["Java", "Engine-Development", "Software Rasterization"],
-    description: "A 3D game made with my own engine written in plain Java, without utilizing the GPU for my course \"Game Programming\". Due to the restrictions of the course, the engine is not based on any graphic framework.",
-    link: "https://github.com/kastanileel/CPUCrunchEngine",
-    image: "https://user-images.githubusercontent.com/56845913/274130553-aae9ebac-9528-471b-89c4-78afc767a3f4.png",
     blog: false
   },
   {
-    id: 2,
+    id: 6,
+    title: "CPU-Crunch-Engine/Alien Arena Shootout",
+    badges: ["Java", "Engine-Development", "Software Rasterization"],
+    description: "A 3D game made with my own engine written in plain Java, without utilizing the GPU for my course \"Game Programming\". Due to the restrictions of the course, the engine is not based on any graphic framework.",
+    link: "https://github.com/kastanileel/CPUCrunchEngine",
+    image: "./montage.png",
+    blog: false
+  },
+  {
+    id: 5,
     title: "\"Tank You, Next!\"",
     badges: [ "C++", "OpenGL", "Project Management", "Software Engineering", "wip"],
-    description: "Parallel to our course \"Software Engineering\" my friend Johannes and I applied our theoretical knowledge in a practical project.",
+    description: "In parallel to our course \"Software Engineering\" my friend Johannes and I applied our theoretical knowledge in a practical project.",
     link: "https://github.com/mj0stjo/Tank-You-Next-",
     image: "/tyn.png",
     blog: false
   },
 
   {
-    id: 1,
+    id: 4,
     title: "OpenGL Demo Scene",
     badges: ["C++", "OpenGL", "Computer Graphics"],
     description: "My first venture into 3D computer graphics, crafted during my \"Computer Graphics\" course.",
@@ -57,7 +58,7 @@ const projects = ref([
     blog: false
   },
   {
-    id: 2,
+    id: 3,
     title: "\"RNN Benchmark\"",
     badges: [ "Python", "Tensorflow", "RNN"],
     description: "Just a simple jupyter notebook for playing around with RNNs in Tensorflow.",
@@ -66,7 +67,7 @@ const projects = ref([
     blog: false
   },
   {
-    id: 3,
+    id: 2,
     title: "OpenGL 2D Game",
     badges: ["C++", "OpenGL", "2D", "Computer Graphics"],
     description: "A simple 2D game made with OpenGL for my course \"Computer Graphics\".",
@@ -75,7 +76,7 @@ const projects = ref([
     blog: false
   },
   {
-    id: 4,
+    id: 1,
     title: "\"Shadow Friend\" - A game made for Brackeys Game Jam 2022.2",
     badges: ["C#", "Unity", "Game Development", "Game Jam"],
     description: "",
@@ -84,7 +85,7 @@ const projects = ref([
     blog: false
   },
   {
-    id: 5,
+    id: 0,
     title: "\"Calming Collecting\" - A game made for the Trijam #182",
     badges: ["C#", "Unity", "Game Development", "Game Jam"],
     description: "",

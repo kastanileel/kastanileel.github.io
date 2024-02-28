@@ -19,13 +19,14 @@ const entries = ref([
   {
     id: 2,
     link: "https://www.shadertoy.com/embed/DlVyWy?gui=true&t=10&paused=true&muted=true",
-    description: "Testing reflections in raymarching. Also rotating SDFs when intersecting smoothly looks awesome!",
+    title: "Reflection Test",
+    description: "Testing reflections and shadows in raymarching. Also rotating SDFs when intersecting smoothly looks awesome!",
   },
   {
     id: 1,
     link: "https://www.shadertoy.com/embed/mlsBDl?t=10&paused=true&muted=true",
     title: "Sylized Sunset over the Sea",
-    description: "A stylized sunset over the sea. The waves are raytraced and simulated through sin-waves. The shiny outline is achieved by using a neat trick.",
+    description: "A stylized sunset over the sea. The waves are simulated through sin-waves. The shiny outline is achieved by using a neat trick.",
   },
   {
     id: 0,
