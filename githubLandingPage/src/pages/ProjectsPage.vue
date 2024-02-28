@@ -32,7 +32,7 @@ const projects = ref([
   {
     id: 6,
     title: "CPU-Crunch-Engine/Alien Arena Shootout",
-    badges: ["Java", "Engine-Development", "Software Rasterization"],
+    badges: ["Java", "Engine-Development", "Game Programming"],
     description: "A 3D game made with my own engine written in plain Java, without utilizing the GPU for my course \"Game Programming\". Due to the restrictions of the course, the engine is not based on any graphic framework.",
     link: "https://github.com/kastanileel/CPUCrunchEngine",
     image: "./montage.png",
